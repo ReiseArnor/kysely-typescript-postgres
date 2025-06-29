@@ -5,6 +5,8 @@
 
 import type { ColumnType } from "kysely";
 
+export type GenderEnum = "man" | "woman";
+
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   ? ColumnType<S, I | undefined, U>
   : ColumnType<T, T | undefined, T>;
@@ -12,9 +14,10 @@ export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
 export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
 export interface Person {
+  age: number;
   created_at: Generated<Timestamp>;
   first_name: string;
-  gender: string;
+  gender: GenderEnum;
   id: Generated<number>;
   last_name: string | null;
 }

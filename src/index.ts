@@ -1,20 +1,12 @@
-import { db } from './db'
-import { Person } from './types'
-import { Insertable } from 'kysely'
+import express from 'express'
+import routes from './routes'
 
-async function main() {
-    let person = { first_name: 'Bob', age: 29, gender: 'man' }
+const app = express();
+app.use(express.json());
+app.use('/api', routes);
 
-    const insert = async (person: Insertable<Person>) => {
-        await db.insertInto('person').values(person).execute()
-    }
+const port = process.env.PORT || 3000;
 
-    await insert(person);
-    person = { first_name: 'Ann', age: 25, gender: 'woman' }
-    await insert(person);
-
-    const people = await db.selectFrom('person').selectAll().execute()
-    console.log(people)
-}
-
-main().catch(console.error)
+app.listen(port, () => {
+    console.log(`Server is running on port: ${port}`)
+});

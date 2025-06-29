@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node ./src/index.ts",
+    "dev": "tsnd --respawn ./src/index.ts",
     "reset:db": "ts-node ./src/forceReset.ts",
     "migrate": "ts-node ./src/migrate.ts",
     "generate-types": "kysely-codegen --out-file ./src/types.ts"
@@ -16,14 +17,17 @@
   "packageManager": "pnpm@10.12.1",
   "dependencies": {
     "dotenv": "^17.0.0",
+    "express": "^5.1.0",
     "kysely": "^0.28.2",
     "pg": "^8.16.3"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "@types/node": "^24.0.6",
     "@types/pg": "^8.15.4",
     "kysely-codegen": "^0.18.5",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }
 }
