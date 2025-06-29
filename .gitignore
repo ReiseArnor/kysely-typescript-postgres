@@ -1,0 +1,57 @@
+# Node.js dependencies
+node_modules/
+.pnpm-store/
+
+# Optional npm cache directory
+.npm/
+
+# Optional yarn cache directory
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Output of 'tsc' command
+dist/
+build/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE/editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Optional REPL history
+.node_repl_history
+
+# MacOS
+.DS_Store
+
+# Coverage directory used by testing tools
+coverage/
+
+# Debug output
+debug.log*
+
+# ts-node cache
+.ts-node/
+
+# pnpm workspace
+.pnpm-debug.log
